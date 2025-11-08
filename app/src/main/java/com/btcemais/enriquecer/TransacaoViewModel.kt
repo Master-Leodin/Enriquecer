@@ -17,6 +17,11 @@ class TransacaoViewModel(private val repository: TransacaoRepository) : ViewMode
     fun insert(transacao: Transacao) = viewModelScope.launch {
         repository.insert(transacao)
     }
+
+    // Adicionar método para deletar transação
+    fun delete(transacao: Transacao) = viewModelScope.launch {
+        repository.delete(transacao)
+    }
 }
 
 class TransacaoViewModelFactory(private val repository: TransacaoRepository) : ViewModelProvider.Factory {

@@ -13,4 +13,9 @@ class TransacaoRepository(private val transacaoDao: TransacaoDao) {
     suspend fun insert(transacao: Transacao) {
         transacaoDao.insert(transacao)
     }
+
+    // Adicionar método para deletar transação
+    suspend fun delete(transacao: Transacao) {
+        transacaoDao.delete(transacao)
+    }
 }

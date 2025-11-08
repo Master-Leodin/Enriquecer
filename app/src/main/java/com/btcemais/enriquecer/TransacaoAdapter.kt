@@ -12,7 +12,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class TransacaoAdapter : ListAdapter<Transacao, TransacaoAdapter.TransacaoViewHolder>(TransacaoDiffCallback()) {
+class TransacaoAdapter(
+    private val onDeleteClick: (Transacao) -> Unit
+) : ListAdapter<Transacao, TransacaoAdapter.TransacaoViewHolder>(TransacaoDiffCallback()) {
 
     private val currencyFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
     private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale("pt", "BR"))
@@ -53,6 +55,11 @@ class TransacaoAdapter : ListAdapter<Transacao, TransacaoAdapter.TransacaoViewHo
                 ContextCompat.getColor(context, R.color.red)
             }
             binding.tvValor.setTextColor(cor)
+
+            // Botão de deletar
+            binding.btnDelete.setOnClickListener {
+                onDeleteClick(transacao)
+            }
         }
     }
 

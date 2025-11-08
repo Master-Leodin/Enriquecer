@@ -1,9 +1,6 @@
 package com.btcemais.enriquecer
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -35,4 +32,8 @@ interface TransacaoDao {
         WHERE strftime('%Y-%m', datetime(data / 1000, 'unixepoch')) = strftime('%Y-%m', 'now')
     """)
     fun getTotalGastosMesAtual(): Flow<Double?>
+
+    // Adicionar método para deletar transação
+    @Delete
+    suspend fun delete(transacao: Transacao)
 }

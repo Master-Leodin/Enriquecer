@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -21,7 +22,6 @@ class GastosFragment : Fragment() {
     private var _binding: FragmentGastosBinding? = null
     private val binding get() = _binding!!
 
-    // Corrigir a forma de obter o ViewModel
     private val viewModel: TransacaoViewModel by activityViewModels {
         val repository = (requireActivity() as MainActivity).repository
         TransacaoViewModelFactory(repository)
@@ -47,7 +47,9 @@ class GastosFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        transacaoAdapter = TransacaoAdapter()
+        transacaoAdapter = TransacaoAdapter { transacao ->
+            showDeleteConfirmationDialog(transacao, "gasto")
+        }
         binding.rvGastos.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = transacaoAdapter
@@ -112,6 +114,20 @@ class GastosFragment : Fragment() {
         } catch (e: ParseException) {
             null
         }
+    }
+
+    private fun showDeleteConfirmationDialog(transacao: Transacao, tipo: String) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Confirmar Exclusão")
+            .setMessage("Tem certeza que deseja excluir este $tipo: ${transacao.descricao}?")
+            .setPositiveButton("Excluir") { dialog, which ->
+                lifecycleScope.launch {
+                    viewModel.delete(transacao)
+                    Toast.makeText(context, "$tipo excluído com sucesso!", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
     }
 
     override fun onDestroyView() {

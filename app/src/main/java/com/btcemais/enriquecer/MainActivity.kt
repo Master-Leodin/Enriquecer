@@ -26,11 +26,13 @@ class MainActivity : AppCompatActivity() {
         val adapter = ViewPagerAdapter(this)
         viewPager.adapter = adapter
 
+        // Atualizar para incluir a nova aba
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Ganhos"
                 1 -> "Gastos"
                 2 -> "Resumo"
+                3 -> "Sobre"
                 else -> null
             }
         }.attach()
