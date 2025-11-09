@@ -105,7 +105,7 @@ class SobreFragment : Fragment() {
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Enriquecer - App de Finanças")
             shareIntent.putExtra(
                 Intent.EXTRA_TEXT,
-                "Baixe o Enriquecer - App de controle financeiro: https://play.google.com/store/apps/details?id=com.btcemais.enriquecer"
+                "Baixe o Enriquecer - App de controle financeiro na página: https://leonportfolio.netlify.app/projects"
             )
             startActivity(Intent.createChooser(shareIntent, "Compartilhar app"))
         } catch (e: Exception) {

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/bkg_page"
     tools:context="GastosFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -50,6 +51,8 @@
         android:layout_height="wrap_content"
         android:text="Salvar Gasto"
         android:layout_marginTop="24dp"
+        android:backgroundTint="@color/bkg_button"
+        android:textColor="@color/text_button"
         app:layout_constraintTop_toBottomOf="@id/til_descricao_gasto"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

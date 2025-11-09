@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/bkg_page"
     tools:context="GanhosFragment">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -49,6 +50,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Salvar Ganho"
+        android:backgroundTint="@color/bkg_button"
+        android:textColor="@color/text_button"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/til_descricao_ganho"
         app:layout_constraintStart_toStartOf="parent"

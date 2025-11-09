@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bkg_page"
     android:padding="16dp">
 
     <LinearLayout
@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
+                android:background="@color/bkg_page"
                 android:gravity="center">
 
                 <TextView
@@ -38,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Versão 1.0"
+                    android:text="Versão 0.1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <TextView
@@ -81,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/bkg_page"
                 android:padding="16dp">
 
                 <TextView
@@ -102,6 +104,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/bkg_button"
+                    android:textColor="@color/text_button"
                     android:text="Copiar Email"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -120,6 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/bkg_page"
                 android:padding="16dp">
 
                 <TextView
@@ -146,6 +151,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/bkg_button"
+                        android:textColor="@color/text_button"
                         android:layout_marginEnd="4dp"
                         android:layout_weight="1"
                         android:text="Abrir Wise"
@@ -156,6 +163,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/bkg_button"
+                        android:textColor="@color/text_button"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
                         android:text="Copiar ID"
@@ -178,6 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/bkg_page"
                 android:padding="16dp">
 
                 <TextView
@@ -199,6 +209,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/bkg_button"
+                    android:textColor="@color/text_button"
                     android:text="Copiar Endereço Lightning"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -217,6 +229,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:background="@color/bkg_page"
                 android:padding="16dp">
 
                 <TextView
@@ -238,6 +251,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/bkg_button"
+                    android:textColor="@color/text_button"
                     android:text="Copiar Endereço Bitcoin"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
@@ -250,6 +265,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Compartilhar App"
+            android:backgroundTint="@color/bkg_button"
+            android:textColor="@color/text_button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
         <!-- Créditos -->
@@ -260,6 +277,7 @@
             android:text="Desenvolvido com ❤️"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textStyle="italic"
+            android:textColor="@color/black"
             android:gravity="center"
             android:layout_gravity="center" />
 

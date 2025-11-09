@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bkg_page"
     tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
@@ -15,6 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tabMode="scrollable"
+        android:background="@color/bkg_page"
     app:tabGravity="center" />
 
     <androidx.viewpager2.widget.ViewPager2
