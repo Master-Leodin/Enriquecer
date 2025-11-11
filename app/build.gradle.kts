@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
+    kotlin("plugin.serialization") version "1.9.0"
 }
 
 android {
@@ -13,7 +14,7 @@ android {
         minSdk = 28
         targetSdk = 35
         versionCode = 1
-        versionName = "0.1"
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -62,10 +63,9 @@ dependencies {
     val room_version = "2.6.1"
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
-    // Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
 
-    // Dependências para Lifecycle (ViewModel e LiveData)
+    // Dependências para Lifecycle
     val lifecycle_version = "2.7.0"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
@@ -74,14 +74,6 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-    // Configurações para evitar conflitos com dependências do Compose
-    configurations.all {
-        resolutionStrategy {
-            // Forçar versões específicas para evitar conflitos
-            force("androidx.compose.ui:ui:1.5.4")
-            force("androidx.compose.runtime:runtime:1.5.4")
-            force("androidx.compose.ui:ui-graphics:1.5.4")
-            force("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
-        }
-    }
+    // Serialização JSON (para o VersionChecker) - IMPORTANTE: usar versão compatível
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 }
