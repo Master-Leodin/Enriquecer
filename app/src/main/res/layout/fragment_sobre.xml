@@ -30,7 +30,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enriquecer"
+                    android:text="@string/about_app_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Versão 0.1"
+                    android:text="@string/about_app_version"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <TextView
@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="Controle suas finanças de forma simples e eficiente"
+                    android:text="@string/about_app_description"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </LinearLayout>
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Apoie o Desenvolvimento"
+            android:text="@string/about_support_development"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="16dp"
-            android:text="Se este app te ajudou, considere fazer uma doação"
+            android:text="@string/about_donation_message"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <!-- PayPal e PIX (Mesma caixa) -->
@@ -88,7 +88,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="PayPal &amp; PIX"
+                    android:text="@string/about_paypal_pix"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold" />
 
@@ -96,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Email: leonardo132@gmail.com"
+                    android:text="@string/about_paypal_email"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <com.google.android.material.button.MaterialButton
@@ -106,7 +106,7 @@
                     android:layout_marginTop="16dp"
                     android:backgroundTint="@color/bkg_button"
                     android:textColor="@color/text_button"
-                    android:text="Copiar Email"
+                    android:text="@string/about_copy_email"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             </LinearLayout>
@@ -130,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wise"
+                    android:text="@string/about_wise"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="ID: leonardot1427"
+                    android:text="@string/about_wise_id"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
                 <LinearLayout
@@ -155,7 +155,7 @@
                         android:textColor="@color/text_button"
                         android:layout_marginEnd="4dp"
                         android:layout_weight="1"
-                        android:text="Abrir Wise"
+                        android:text="@string/about_open_wise"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
                     <com.google.android.material.button.MaterialButton
@@ -167,7 +167,7 @@
                         android:textColor="@color/text_button"
                         android:layout_marginStart="4dp"
                         android:layout_weight="1"
-                        android:text="Copiar ID"
+                        android:text="@string/about_copy_wise_id"
                         style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
                 </LinearLayout>
@@ -193,7 +193,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lightning Network"
+                    android:text="@string/about_lightning"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold" />
 
@@ -211,7 +211,7 @@
                     android:layout_marginTop="8dp"
                     android:backgroundTint="@color/bkg_button"
                     android:textColor="@color/text_button"
-                    android:text="Copiar Endereço Lightning"
+                    android:text="@string/about_copy_lightning"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             </LinearLayout>
@@ -235,7 +235,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bitcoin (On-Chain)"
+                    android:text="@string/about_bitcoin"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textStyle="bold" />
 
@@ -253,7 +253,7 @@
                     android:layout_marginTop="8dp"
                     android:backgroundTint="@color/bkg_button"
                     android:textColor="@color/text_button"
-                    android:text="Copiar Endereço Bitcoin"
+                    android:text="@string/about_copy_bitcoin"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
 
             </LinearLayout>
@@ -264,7 +264,7 @@
             android:id="@+id/btn_compartilhar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Compartilhar App"
+            android:text="@string/about_share_app"
             android:backgroundTint="@color/bkg_button"
             android:textColor="@color/text_button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
@@ -274,7 +274,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Desenvolvido com ❤️"
+            android:text="@string/about_developed_with_love"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
             android:textStyle="italic"
             android:textColor="@color/black"

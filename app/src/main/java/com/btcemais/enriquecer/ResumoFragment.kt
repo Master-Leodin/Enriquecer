@@ -9,20 +9,23 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.btcemais.enriquecer.databinding.FragmentResumoBinding
 import java.text.NumberFormat
-import java.util.Locale
+import java.util.*
 
 class ResumoFragment : Fragment() {
 
     private var _binding: FragmentResumoBinding? = null
     private val binding get() = _binding!!
 
-    // Corrigir a forma de obter o ViewModel
     private val viewModel: TransacaoViewModel by activityViewModels {
         val repository = (requireActivity() as MainActivity).repository
         TransacaoViewModelFactory(repository)
     }
 
-    private val currencyFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
+    // Usar formato numérico sem símbolo de moeda específico
+    private val numberFormat = NumberFormat.getNumberInstance(Locale.getDefault()).apply {
+        minimumFractionDigits = 2
+        maximumFractionDigits = 2
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,13 +43,13 @@ class ResumoFragment : Fragment() {
     private fun observeViewModel() {
         viewModel.totalGanhosMesAtual.observe(viewLifecycleOwner) { totalGanhos ->
             val ganhos = totalGanhos ?: 0.0
-            binding.tvTotalGanhos.text = currencyFormat.format(ganhos)
+            binding.tvTotalGanhos.text = "$ " + numberFormat.format(ganhos)
             updateSaldo()
         }
 
         viewModel.totalGastosMesAtual.observe(viewLifecycleOwner) { totalGastos ->
             val gastos = totalGastos ?: 0.0
-            binding.tvTotalGastos.text = currencyFormat.format(gastos)
+            binding.tvTotalGastos.text = "$ " + numberFormat.format(gastos)
             updateSaldo()
         }
     }
@@ -56,23 +59,18 @@ class ResumoFragment : Fragment() {
         val gastos = viewModel.totalGastosMesAtual.value ?: 0.0
         val saldo = ganhos - gastos
 
-        binding.tvSaldoMensal.text = currencyFormat.format(saldo)
+        binding.tvSaldoMensal.text = "$ " + numberFormat.format(saldo)
 
         val context = context ?: return
 
-        // Limpar texto anterior
-        val currentText = binding.tvSaldoMensal.text.toString()
-        val baseText = currentText.substringBefore(" (") ?: currentText
-        binding.tvSaldoMensal.text = baseText
-
         if (saldo > 0) {
-            binding.tvSaldoMensal.append(" (Sobrando)")
+            binding.tvSaldoMensal.append(getString(R.string.balance_positive))
             binding.tvSaldoMensal.setTextColor(ContextCompat.getColor(context, R.color.green))
         } else if (saldo < 0) {
-            binding.tvSaldoMensal.append(" (Devendo)")
+            binding.tvSaldoMensal.append(getString(R.string.balance_negative))
             binding.tvSaldoMensal.setTextColor(ContextCompat.getColor(context, R.color.red))
         } else {
-            binding.tvSaldoMensal.append(" (Zerado)")
+            binding.tvSaldoMensal.append(getString(R.string.balance_zero))
             binding.tvSaldoMensal.setTextColor(ContextCompat.getColor(context, R.color.black))
         }
     }

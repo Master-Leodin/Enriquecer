@@ -18,7 +18,6 @@ class SobreFragment : Fragment() {
     private var _binding: FragmentSobreBinding? = null
     private val binding get() = _binding!!
 
-    // Métodos de doação
     private val paypalPixEmail = "leonardo132@gmail.com"
     private val wiseId = "leonardot1427"
     private val wiseLink = "https://wise.com/pay/me/leonardot1427"
@@ -41,75 +40,69 @@ class SobreFragment : Fragment() {
     }
 
     private fun setupAppInfo() {
-        binding.tvAppVersion.text = "Versão 1.0"
-        binding.tvAppDescription.text = "Enriquecer - Seu aplicativo de controle financeiro pessoal"
+        binding.tvAppVersion.text = getString(R.string.about_app_version, "1.0")
+        binding.tvAppDescription.text = getString(R.string.about_app_description)
     }
 
     private fun setupClickListeners() {
-        // Botão para copiar email (PayPal e PIX)
         binding.btnCopiarEmail.setOnClickListener {
-            copiarParaAreaTransferencia(paypalPixEmail, "Email copiado para PayPal e PIX!")
+            copyToClipboard(paypalPixEmail, getString(R.string.success_email_copied))
         }
 
-        // Botão de doação via Wise
         binding.btnDoacaoWise.setOnClickListener {
-            abrirLinkExterno(wiseLink)
+            openExternalLink(wiseLink)
         }
 
-        // Botão para copiar ID Wise
         binding.btnCopiarWise.setOnClickListener {
-            copiarParaAreaTransferencia(wiseId, "ID Wise copiado!")
+            copyToClipboard(wiseId, getString(R.string.success_wise_id_copied))
         }
 
-        // Botão de doação via Lightning
         binding.btnDoacaoLightning.setOnClickListener {
-            copiarParaAreaTransferencia(lightningAddress, "Endereço Lightning copiado!")
+            copyToClipboard(lightningAddress, getString(R.string.success_lightning_copied))
         }
 
-        // Botão de doação via Bitcoin (On Chain)
         binding.btnDoacaoBitcoin.setOnClickListener {
-            copiarParaAreaTransferencia(bitcoinAddress, "Endereço Bitcoin copiado!")
+            copyToClipboard(bitcoinAddress, getString(R.string.success_bitcoin_copied))
         }
 
-        // Botão de compartilhar app
         binding.btnCompartilhar.setOnClickListener {
-            compartilharApp()
+            shareApp()
         }
     }
 
-    private fun abrirLinkExterno(url: String) {
+    private fun openExternalLink(url: String) {
         try {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Não foi possível abrir o link", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.error_open_link, Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun copiarParaAreaTransferencia(texto: String, mensagemSucesso: String) {
+    private fun copyToClipboard(text: String, successMessage: String) {
         try {
             val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = ClipData.newPlainText("Doação", texto)
+            val clip = ClipData.newPlainText("Donation", text)
             clipboard.setPrimaryClip(clip)
 
-            Toast.makeText(requireContext(), mensagemSucesso, Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), successMessage, Toast.LENGTH_SHORT).show()
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Erro ao copiar", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.error_copy, Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun compartilharApp() {
+    private fun shareApp() {
         try {
             val shareIntent = Intent(Intent.ACTION_SEND)
             shareIntent.type = "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Enriquecer - App de Finanças")
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.about_app_name))
             shareIntent.putExtra(
                 Intent.EXTRA_TEXT,
-                "Baixe o Enriquecer - App de controle financeiro na página: https://leonportfolio.netlify.app/projects"
+                getString(R.string.share_app_text)
             )
-            startActivity(Intent.createChooser(shareIntent, "Compartilhar app"))
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.about_share_app)))
         } catch (e: Exception) {
-            Toast.makeText(requireContext(), "Erro ao compartilhar", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), R.string.error_share, Toast.LENGTH_SHORT).show()
         }
     }
 

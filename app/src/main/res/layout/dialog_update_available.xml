@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:text="Nova Versão Disponível!"
+        android:text="@string/update_dialog_title"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         android:textColor="#4CAF50"
         android:textStyle="bold" />
@@ -34,7 +34,7 @@
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         android:textColor="@color/black"
-        tools:text="Release notes da nova versão aparecerão aqui." />
+        tools:text="@string/update_dialog_release_notes" />
 
     <ProgressBar
         android:id="@+id/updateProgressBar"
@@ -60,7 +60,7 @@
             android:layout_weight="1"
             android:backgroundTint="#F44336"
             android:textColor="@color/white"
-            android:text="Agora não" />
+            android:text="@string/update_dialog_later_button" />
 
         <Button
             android:id="@+id/updateButton"
@@ -70,7 +70,7 @@
             android:layout_weight="1"
             android:backgroundTint="#4CAF50"
             android:textColor="@color/white"
-            android:text="Atualizar" />
+            android:text="@string/update_dialog_update_button" />
 
     </LinearLayout>
 

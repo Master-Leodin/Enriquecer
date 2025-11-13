@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     private var updateDialog: AlertDialog? = null
     private val TAG = "MainActivity-Enriquecer"
 
-    // Criar o repositório como uma propriedade pública para ser acessada pelos fragments
     val repository: TransacaoRepository by lazy {
         TransacaoRepository(AppDatabase.getDatabase(applicationContext).transacaoDao())
     }
@@ -40,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         setupViewPager()
 
-        // Verificar atualizações após um pequeno delay para a UI carregar
         lifecycleScope.launch {
             kotlinx.coroutines.delay(2000)
             checkForAppUpdate()
@@ -56,10 +54,10 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
-                0 -> "Ganhos"
-                1 -> "Gastos"
-                2 -> "Resumo"
-                3 -> "Sobre"
+                0 -> getString(R.string.gains)
+                1 -> getString(R.string.expenses)
+                2 -> getString(R.string.summary)
+                3 -> getString(R.string.about)
                 else -> null
             }
         }.attach()
@@ -118,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d(TAG, "Update dialog shown successfully")
             } catch (e: Exception) {
                 Log.e(TAG, "Error showing update dialog: ${e.message}", e)
-                Toast.makeText(this, "Erro ao mostrar atualização", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.error_showing_update, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -130,7 +128,7 @@ class MainActivity : AppCompatActivity() {
 
         updateButton.isEnabled = false
         laterButton.isEnabled = false
-        updateButton.text = "Baixando..."
+        updateButton.text = getString(R.string.downloading)
         progressBar.visibility = android.view.View.VISIBLE
         progressBar.progress = 0
 
@@ -178,7 +176,7 @@ class MainActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main) {
                     progressBar.visibility = android.view.View.GONE
-                    updateButton.text = "Instalar"
+                    updateButton.text = getString(R.string.install)
                     updateButton.isEnabled = true
                     laterButton.isEnabled = true
 
@@ -189,13 +187,13 @@ class MainActivity : AppCompatActivity() {
                 Log.e(TAG, "Download error: ${e.message}", e)
                 withContext(Dispatchers.Main) {
                     progressBar.visibility = android.view.View.GONE
-                    updateButton.text = "Tentar Novamente"
+                    updateButton.text = getString(R.string.try_again)
                     updateButton.isEnabled = true
                     laterButton.isEnabled = true
 
                     Toast.makeText(
                         this@MainActivity,
-                        "Erro no download: ${e.message}",
+                        getString(R.string.error_download, e.message),
                         Toast.LENGTH_LONG
                     ).show()
                 }
@@ -208,7 +206,7 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "Triggering installation for: ${apkFile.absolutePath}")
 
             if (!apkFile.exists() || apkFile.length() == 0L) {
-                Toast.makeText(this, "Arquivo de atualização corrompido", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.error_corrupted_file, Toast.LENGTH_SHORT).show()
                 return
             }
 
@@ -234,10 +232,10 @@ class MainActivity : AppCompatActivity() {
 
             val errorMsg = when {
                 e.message?.contains("conflict") == true ->
-                    "Conflito de pacote. Desinstale a versão atual primeiro."
+                    getString(R.string.error_package_conflict)
                 e.message?.contains("no app") == true ->
-                    "Nenhum app pode abrir o arquivo. Ative 'Fontes desconhecidas'."
-                else -> "Erro na instalação: ${e.message}"
+                    getString(R.string.error_no_app)
+                else -> getString(R.string.error_installation, e.message)
             }
 
             Toast.makeText(this, errorMsg, Toast.LENGTH_LONG).show()

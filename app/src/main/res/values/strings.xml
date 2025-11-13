@@ -1,6 +1,96 @@
 <resources>
-    <string name="app_name">Enriquecer</string>
-    <string name="delete_item">Deletar item</string>
+    <string name="app_name">Enrich</string>
+    <string name="delete_item">Delete item</string>
 
+    <!-- Update Dialog -->
+    <string name="update_dialog_title">New Version Available!</string>
+    <string name="update_dialog_release_notes">Release notes for the new version will appear here.</string>
+    <string name="update_dialog_later_button">Not Now</string>
+    <string name="update_dialog_update_button">Update</string>
 
+    <!-- Gains Fragment -->
+    <string name="gains_value_hint">Gains Value ($)</string>
+    <string name="gains_description_hint">Gains Description</string>
+    <string name="save_gains">Save Gains</string>
+    <string name="gains_history">Gains History:</string>
+
+    <!-- Expenses Fragment -->
+    <string name="expenses_value_hint">Expenses Value ($)</string>
+    <string name="expenses_description_hint">Expenses Description</string>
+    <string name="save_expenses">Save Expenses</string>
+    <string name="expenses_history">Expenses History:</string>
+
+    <!-- Summary Fragment -->
+    <string name="summary_title">Monthly Financial Summary</string>
+    <string name="total_gains">Total Gains this Month:</string>
+    <string name="total_expenses">Total Expenses this Month:</string>
+    <string name="monthly_balance">Monthly Balance:</string>
+    <string name="balance_positive"> (Leftover)</string>
+    <string name="balance_negative"> (Owing)</string>
+    <string name="balance_zero"> (Zero)</string>
+
+    <!-- About Fragment -->
+    <string name="about_app_name">Enrich</string>
+    <string name="about_app_version">Version %s</string>
+    <string name="about_app_description">Control your finances in a simple and efficient way</string>
+    <string name="about_support_development">Support Development</string>
+    <string name="about_donation_message">If this app helped you, consider making a donation</string>
+    <string name="about_paypal_pix">PayPal &amp; PIX</string>
+    <string name="about_paypal_email">Email: leonardo132@gmail.com</string>
+    <string name="about_copy_email">Copy Email</string>
+    <string name="about_wise">Wise</string>
+    <string name="about_wise_id">ID: leonardot1427</string>
+    <string name="about_open_wise">Open Wise</string>
+    <string name="about_copy_wise_id">Copy ID</string>
+    <string name="about_lightning">Lightning Network</string>
+    <string name="about_copy_lightning">Copy Lightning Address</string>
+    <string name="about_bitcoin">Bitcoin (On-Chain)</string>
+    <string name="about_copy_bitcoin">Copy Bitcoin Address</string>
+    <string name="about_share_app">Share App</string>
+    <string name="about_developed_with_love">Developed with ❤️</string>
+
+    <!-- Toast and Dialog Messages -->
+    <string name="error_fill_value_description">Fill in the value and description.</string>
+    <string name="error_invalid_value">Invalid value. Use format: 1234.56</string>
+    <string name="error_description_length">Description must be at least 2 characters long.</string>
+    <string name="success_gains_saved">Gains saved successfully!</string>
+    <string name="success_expenses_saved">Expenses saved successfully!</string>
+    <string name="confirm_delete_title">Confirm Deletion</string>
+    <string name="confirm_delete_message">Are you sure you want to delete this %s: %s?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="success_gains_deleted">gains deleted successfully!</string>
+    <string name="success_expenses_deleted">expenses deleted successfully!</string>
+
+    <!-- MainActivity Update Errors -->
+    <string name="error_download">Download error: %s</string>
+    <string name="error_corrupted_file">Corrupted update file</string>
+    <string name="error_package_conflict">Package conflict. Uninstall the current version first.</string>
+    <string name="error_no_app">No app can open the file. Enable \'Unknown sources\'.</string>
+    <string name="error_installation">Installation error: %s</string>
+    <string name="error_showing_update">Error showing update</string>
+
+    <!-- About Fragment Toast Messages -->
+    <string name="success_email_copied">Email copied for PayPal and PIX!</string>
+    <string name="success_wise_id_copied">Wise ID copied!</string>
+    <string name="success_lightning_copied">Lightning address copied!</string>
+    <string name="success_bitcoin_copied">Bitcoin address copied!</string>
+    <string name="error_open_link">Could not open link</string>
+    <string name="error_copy">Error copying</string>
+    <string name="error_share">Error sharing</string>
+    <string name="share_app_text">Download Enrich - Finance control app at: https://leonportfolio.netlify.app/projects</string>
+
+    <!-- Additional strings -->
+    <string name="gains">Gains</string>
+    <string name="expenses">Expenses</string>
+    <string name="summary">Summary</string>
+    <string name="about">About</string>
+    <string name="downloading">Downloading…</string>
+    <string name="install">Install</string>
+    <string name="try_again">Try Again</string>
+
+    <!-- Sample data for tools -->
+    <string name="sample_description">Monthly Salary</string>
+    <string name="sample_date">11/01/2025</string>
+    <string name="sample_amount">+ $5,000.00</string>
 </resources>

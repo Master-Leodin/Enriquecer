@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">Enriquecer</string>
+    <string name="delete_item">Eliminar elemento</string>
+
+    <!-- Update Dialog -->
+    <string name="update_dialog_title">¡Nueva Versión Disponible!</string>
+    <string name="update_dialog_release_notes">Las notas de la versión aparecerán aquí.</string>
+    <string name="update_dialog_later_button">Ahora no</string>
+    <string name="update_dialog_update_button">Actualizar</string>
+
+    <!-- Gains Fragment -->
+    <string name="gains_value_hint">Valor de Ganancias ($)</string>
+    <string name="gains_description_hint">Descripción de Ganancias</string>
+    <string name="save_gains">Guardar Ganancias</string>
+    <string name="gains_history">Historial de Ganancias:</string>
+
+    <!-- Expenses Fragment -->
+    <string name="expenses_value_hint">Valor de Gastos ($)</string>
+    <string name="expenses_description_hint">Descripción de Gastos</string>
+    <string name="save_expenses">Guardar Gastos</string>
+    <string name="expenses_history">Historial de Gastos:</string>
+
+    <!-- Summary Fragment -->
+    <string name="summary_title">Resumen Financiero Mensual</string>
+    <string name="total_gains">Total de Ganancias del Mes:</string>
+    <string name="total_expenses">Total de Gastos del Mes:</string>
+    <string name="monthly_balance">Saldo Mensual:</string>
+    <string name="balance_positive"> (Sobrante)</string>
+    <string name="balance_negative"> (Debiendo)</string>
+    <string name="balance_zero"> (Cero)</string>
+
+    <!-- About Fragment -->
+    <string name="about_app_name">Enriquecer</string>
+    <string name="about_app_version">Versión %s</string>
+    <string name="about_app_description">Controla tus finanzas de forma simple y eficiente</string>
+    <string name="about_support_development">Apoya el Desarrollo</string>
+    <string name="about_donation_message">Si esta app te ayudó, considera hacer una donación</string>
+    <string name="about_paypal_pix">PayPal &amp; PIX</string>
+    <string name="about_paypal_email">Email: leonardo132@gmail.com</string>
+    <string name="about_copy_email">Copiar Email</string>
+    <string name="about_wise">Wise</string>
+    <string name="about_wise_id">ID: leonardot1427</string>
+    <string name="about_open_wise">Abrir Wise</string>
+    <string name="about_copy_wise_id">Copiar ID</string>
+    <string name="about_lightning">Lightning Network</string>
+    <string name="about_copy_lightning">Copiar Dirección Lightning</string>
+    <string name="about_bitcoin">Bitcoin (On-Chain)</string>
+    <string name="about_copy_bitcoin">Copiar Dirección Bitcoin</string>
+    <string name="about_share_app">Compartir App</string>
+    <string name="about_developed_with_love">Desarrollado con ❤️</string>
+
+    <!-- Toast and Dialog Messages -->
+    <string name="error_fill_value_description">Complete el valor y la descripción.</string>
+    <string name="error_invalid_value">Valor inválido. Use formato: 1234,56</string>
+    <string name="error_description_length">La descripción debe tener al menos 2 caracteres.</string>
+    <string name="success_gains_saved">¡Ganancias guardadas con éxito!</string>
+    <string name="success_expenses_saved">¡Gastos guardados con éxito!</string>
+    <string name="confirm_delete_title">Confirmar Eliminación</string>
+    <string name="confirm_delete_message">¿Está seguro de que desea eliminar este %s: %s?</string>
+    <string name="delete">Eliminar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="success_gains_deleted">ganancias eliminadas con éxito!</string>
+    <string name="success_expenses_deleted">gastos eliminados con éxito!</string>
+
+    <!-- MainActivity Update Errors -->
+    <string name="error_download">Error en la descarga: %s</string>
+    <string name="error_corrupted_file">Archivo de actualización corrupto</string>
+    <string name="error_package_conflict">Conflicto de paquete. Desinstale la versión actual primero.</string>
+    <string name="error_no_app">Ninguna app puede abrir el archivo. Active \'Orígenes desconocidos\'.</string>
+    <string name="error_installation">Error de instalación: %s</string>
+    <string name="error_showing_update">Error al mostrar actualización</string>
+
+    <!-- About Fragment Toast Messages -->
+    <string name="success_email_copied">¡Email copiado para PayPal y PIX!</string>
+    <string name="success_wise_id_copied">¡ID de Wise copiado!</string>
+    <string name="success_lightning_copied">¡Dirección Lightning copiada!</string>
+    <string name="success_bitcoin_copied">¡Dirección Bitcoin copiada!</string>
+    <string name="error_open_link">No se pudo abrir el enlace</string>
+    <string name="error_copy">Error al copiar</string>
+    <string name="error_share">Error al compartir</string>
+    <string name="share_app_text">Descarga Enriquecer - App de control de finanzas en: https://leonportfolio.netlify.app/projects</string>
+
+    <!-- Additional strings -->
+    <string name="gains">Ganancias</string>
+    <string name="expenses">Gastos</string>
+    <string name="summary">Resumen</string>
+    <string name="about">Acerca</string>
+    <string name="downloading">Descargando…</string>
+    <string name="install">Instalar</string>
+    <string name="try_again">Intentar de Nuevo</string>
+
+    <!-- Sample data for tools -->
+    <string name="sample_description">Salario Mensual</string>
+    <string name="sample_date">01/11/2025</string>
+    <string name="sample_amount">+ $5.000,00</string>
+</resources>

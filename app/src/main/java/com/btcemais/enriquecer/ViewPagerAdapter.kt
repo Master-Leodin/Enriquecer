@@ -14,7 +14,7 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapte
             1 -> GastosFragment()
             2 -> ResumoFragment()
             3 -> SobreFragment()
-            else -> throw IllegalStateException("Posição inválida no ViewPager")
+            else -> throw IllegalStateException("Invalid ViewPager position")
         }
     }
 }

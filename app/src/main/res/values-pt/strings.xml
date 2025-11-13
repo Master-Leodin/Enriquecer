@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">Enriquecer</string>
+    <string name="delete_item">Deletar item</string>
+
+    <!-- Update Dialog -->
+    <string name="update_dialog_title">Nova Versão Disponível!</string>
+    <string name="update_dialog_release_notes">Release notes da nova versão aparecerão aqui.</string>
+    <string name="update_dialog_later_button">Agora não</string>
+    <string name="update_dialog_update_button">Atualizar</string>
+
+    <!-- Gains Fragment -->
+    <string name="gains_value_hint">Valor do Ganho ($)</string>
+    <string name="gains_description_hint">Descrição do Ganho</string>
+    <string name="save_gains">Salvar Ganho</string>
+    <string name="gains_history">Histórico de Ganhos:</string>
+
+    <!-- Expenses Fragment -->
+    <string name="expenses_value_hint">Valor do Gasto ($)</string>
+    <string name="expenses_description_hint">Descrição do Gasto</string>
+    <string name="save_expenses">Salvar Gasto</string>
+    <string name="expenses_history">Histórico de Gastos:</string>
+
+    <!-- Summary Fragment -->
+    <string name="summary_title">Resumo Financeiro Mensal</string>
+    <string name="total_gains">Total de Ganhos no Mês:</string>
+    <string name="total_expenses">Total de Gastos no Mês:</string>
+    <string name="monthly_balance">Saldo Mensal:</string>
+    <string name="balance_positive"> (Sobrando)</string>
+    <string name="balance_negative"> (Devendo)</string>
+    <string name="balance_zero"> (Zerado)</string>
+
+    <!-- About Fragment -->
+    <string name="about_app_name">Enriquecer</string>
+    <string name="about_app_version">Versão %s</string>
+    <string name="about_app_description">Controle suas finanças de forma simples e eficiente</string>
+    <string name="about_support_development">Apoie o Desenvolvimento</string>
+    <string name="about_donation_message">Se este app te ajudou, considere fazer uma doação</string>
+    <string name="about_paypal_pix">PayPal &amp; PIX</string>
+    <string name="about_paypal_email">Email: leonardo132@gmail.com</string>
+    <string name="about_copy_email">Copiar Email</string>
+    <string name="about_wise">Wise</string>
+    <string name="about_wise_id">ID: leonardot1427</string>
+    <string name="about_open_wise">Abrir Wise</string>
+    <string name="about_copy_wise_id">Copiar ID</string>
+    <string name="about_lightning">Lightning Network</string>
+    <string name="about_copy_lightning">Copiar Endereço Lightning</string>
+    <string name="about_bitcoin">Bitcoin (On-Chain)</string>
+    <string name="about_copy_bitcoin">Copiar Endereço Bitcoin</string>
+    <string name="about_share_app">Compartilhar App</string>
+    <string name="about_developed_with_love">Desenvolvido com ❤️</string>
+
+    <!-- Toast and Dialog Messages -->
+    <string name="error_fill_value_description">Preencha o valor e a descrição.</string>
+    <string name="error_invalid_value">Valor inválido. Use formato: 1234,56</string>
+    <string name="error_description_length">Descrição deve ter pelo menos 2 caracteres.</string>
+    <string name="success_gains_saved">Ganho salvo com sucesso!</string>
+    <string name="success_expenses_saved">Gasto salvo com sucesso!</string>
+    <string name="confirm_delete_title">Confirmar Exclusão</string>
+    <string name="confirm_delete_message">Tem certeza que deseja excluir este %s: %s?</string>
+    <string name="delete">Excluir</string>
+    <string name="cancel">Cancelar</string>
+    <string name="success_gains_deleted">ganho excluído com sucesso!</string>
+    <string name="success_expenses_deleted">gasto excluído com sucesso!</string>
+
+    <!-- MainActivity Update Errors -->
+    <string name="error_download">Erro no download: %s</string>
+    <string name="error_corrupted_file">Arquivo de atualização corrompido</string>
+    <string name="error_package_conflict">Conflito de pacote. Desinstale a versão atual primeiro.</string>
+    <string name="error_no_app">Nenhum app pode abrir o arquivo. Ative \'Fontes desconhecidas\'.</string>
+    <string name="error_installation">Erro na instalação: %s</string>
+    <string name="error_showing_update">Erro ao mostrar atualização</string>
+
+    <!-- About Fragment Toast Messages -->
+    <string name="success_email_copied">Email copiado para PayPal e PIX!</string>
+    <string name="success_wise_id_copied">ID Wise copiado!</string>
+    <string name="success_lightning_copied">Endereço Lightning copiado!</string>
+    <string name="success_bitcoin_copied">Endereço Bitcoin copiado!</string>
+    <string name="error_open_link">Não foi possível abrir o link</string>
+    <string name="error_copy">Erro ao copiar</string>
+    <string name="error_share">Erro ao compartilhar</string>
+    <string name="share_app_text">Baixe o Enriquecer - App de controle financeiro na página: https://leonportfolio.netlify.app/projects</string>
+
+    <!-- Additional strings -->
+    <string name="gains">Ganhos</string>
+    <string name="expenses">Gastos</string>
+    <string name="summary">Resumo</string>
+    <string name="about">Sobre</string>
+    <string name="downloading">Baixando…</string>
+    <string name="install">Instalar</string>
+    <string name="try_again">Tentar Novamente</string>
+
+    <!-- Sample data for tools -->
+    <string name="sample_description">Salário Mensal</string>
+    <string name="sample_date">01/11/2025</string>
+    <string name="sample_amount">+ $5.000,00</string>
+</resources>

@@ -9,15 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.btcemais.enriquecer.databinding.ItemTransacaoBinding
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import java.util.*
 
 class TransacaoAdapter(
     private val onDeleteClick: (Transacao) -> Unit
 ) : ListAdapter<Transacao, TransacaoAdapter.TransacaoViewHolder>(TransacaoDiffCallback()) {
 
-    private val currencyFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
-    private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale("pt", "BR"))
+    // Usar formato numérico sem símbolo de moeda específico
+    private val numberFormat = NumberFormat.getNumberInstance(Locale.getDefault()).apply {
+        minimumFractionDigits = 2
+        maximumFractionDigits = 2
+    }
+    private val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransacaoViewHolder {
         val binding = ItemTransacaoBinding.inflate(
@@ -44,8 +47,9 @@ class TransacaoAdapter(
             binding.tvDescricao.text = transacao.descricao
             binding.tvData.text = dateFormat.format(Date(transacao.data))
 
-            val valorFormatado = currencyFormat.format(transacao.valor)
-            val prefixo = if (transacao.tipo == TipoTransacao.GANHO) "+ " else "- "
+            // Formatar valor com $ sempre
+            val valorFormatado = numberFormat.format(transacao.valor)
+            val prefixo = if (transacao.tipo == TipoTransacao.GANHO) "+ $" else "- $"
             binding.tvValor.text = prefixo + valorFormatado
 
             val context = binding.root.context
@@ -56,7 +60,7 @@ class TransacaoAdapter(
             }
             binding.tvValor.setTextColor(cor)
 
-            // Botão de deletar
+            // Delete button
             binding.btnDelete.setOnClickListener {
                 onDeleteClick(transacao)
             }

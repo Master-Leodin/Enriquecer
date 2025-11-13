@@ -48,7 +48,7 @@ class GastosFragment : Fragment() {
 
     private fun setupRecyclerView() {
         transacaoAdapter = TransacaoAdapter { transacao ->
-            showDeleteConfirmationDialog(transacao, "gasto")
+            showDeleteConfirmationDialog(transacao, getString(R.string.expenses))
         }
         binding.rvGastos.apply {
             layoutManager = LinearLayoutManager(context)
@@ -77,18 +77,18 @@ class GastosFragment : Fragment() {
         val descricao = binding.etDescricaoGasto.text.toString().trim()
 
         if (valorText.isBlank() || descricao.isBlank()) {
-            Toast.makeText(context, "Preencha o valor e a descrição.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.error_fill_value_description, Toast.LENGTH_SHORT).show()
             return
         }
 
         val valor = parseCurrencyValue(valorText)
         if (valor == null || valor <= 0) {
-            Toast.makeText(context, "Valor inválido. Use formato: 1234,56", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.error_invalid_value, Toast.LENGTH_SHORT).show()
             return
         }
 
         if (descricao.length < 2) {
-            Toast.makeText(context, "Descrição deve ter pelo menos 2 caracteres.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.error_description_length, Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -102,15 +102,25 @@ class GastosFragment : Fragment() {
             viewModel.insert(transacao)
             binding.etValorGasto.setText("")
             binding.etDescricaoGasto.setText("")
-            Toast.makeText(context, "Gasto salvo com sucesso!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, R.string.success_expenses_saved, Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun parseCurrencyValue(value: String): Double? {
         return try {
-            val format = DecimalFormat.getInstance(Locale("pt", "BR")) as DecimalFormat
+            // Remove qualquer símbolo de moeda e espaços, e substitui vírgula por ponto se necessário
+            var cleanValue = value.replace("[R$]", "").replace("\\s".toRegex(), "").trim()
+
+            // Para locale pt-BR, substitui vírgula por ponto
+            if (Locale.getDefault() == Locale("pt", "BR")) {
+                cleanValue = cleanValue.replace(',', '.')
+            }
+
+            val format = DecimalFormat.getInstance(Locale.getDefault()) as DecimalFormat
             format.isParseBigDecimal = true
-            format.parse(value)?.toDouble()
+
+            val parsedValue = format.parse(cleanValue)?.toDouble()
+            parsedValue
         } catch (e: ParseException) {
             null
         }
@@ -118,15 +128,15 @@ class GastosFragment : Fragment() {
 
     private fun showDeleteConfirmationDialog(transacao: Transacao, tipo: String) {
         AlertDialog.Builder(requireContext())
-            .setTitle("Confirmar Exclusão")
-            .setMessage("Tem certeza que deseja excluir este $tipo: ${transacao.descricao}?")
-            .setPositiveButton("Excluir") { dialog, which ->
+            .setTitle(R.string.confirm_delete_title)
+            .setMessage(getString(R.string.confirm_delete_message, tipo, transacao.descricao))
+            .setPositiveButton(R.string.delete) { dialog, which ->
                 lifecycleScope.launch {
                     viewModel.delete(transacao)
-                    Toast.makeText(context, "$tipo excluído com sucesso!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.success_expenses_deleted), Toast.LENGTH_SHORT).show()
                 }
             }
-            .setNegativeButton("Cancelar", null)
+            .setNegativeButton(R.string.cancel, null)
             .show()
     }
 

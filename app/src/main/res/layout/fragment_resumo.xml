@@ -12,7 +12,7 @@
         android:id="@+id/tv_titulo_resumo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Resumo Financeiro Mensal"
+        android:text="@string/summary_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:gravity="center"
@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total de Ganhos no Mês:"
+                android:text="@string/total_gains"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:layout_marginTop="4dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textColor="@android:color/holo_green_dark"
-                tools:text="R$ 5.000,00" />
+                tools:text="$ 5,000.00" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -76,7 +76,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total de Gastos no Mês:"
+                android:text="@string/total_expenses"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
@@ -86,7 +86,7 @@
                 android:layout_marginTop="4dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 android:textColor="@android:color/holo_red_dark"
-                tools:text="R$ 3.500,00" />
+                tools:text="$ 3,500.00" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -111,7 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saldo Mensal:"
+                android:text="@string/monthly_balance"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TextView
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                tools:text="R$ 1.500,00 (Sobrando)" />
+                tools:text="$ 1,500.00" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
