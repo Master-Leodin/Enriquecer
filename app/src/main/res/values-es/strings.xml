@@ -78,7 +78,7 @@
     <string name="error_open_link">No se pudo abrir el enlace</string>
     <string name="error_copy">Error al copiar</string>
     <string name="error_share">Error al compartir</string>
-    <string name="share_app_text">Descarga Enriquecer - App de control de finanzas en: https://leonportfolio.netlify.app/projects</string>
+    <string name="share_app_text">Descarga Enriquecer - App de control de finanzas en: https://leonportfolio.netlify.app</string>
 
     <!-- Additional strings -->
     <string name="gains">Ganancias</string>
